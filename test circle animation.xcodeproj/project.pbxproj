@@ -17,8 +17,7 @@
 		671701552B59148500AEEC6E /* test_circle_animationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701542B59148500AEEC6E /* test_circle_animationUITests.swift */; };
 		671701572B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701562B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift */; };
 		671701642B59152500AEEC6E /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701632B59152500AEEC6E /* AnimationView.swift */; };
-		671701672B59185400AEEC6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671701662B59185400AEEC6E /* CoreGraphics.framework */; };
-		6717016B2B59195400AEEC6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6717016A2B59195400AEEC6E /* QuartzCore.framework */; };
+		6717016D2B59A09A00AEEC6E /* AnimationCompletionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6717016C2B59A09A00AEEC6E /* AnimationCompletionAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +54,7 @@
 		671701632B59152500AEEC6E /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		671701662B59185400AEEC6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6717016A2B59195400AEEC6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6717016C2B59A09A00AEEC6E /* AnimationCompletionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCompletionAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6717016B2B59195400AEEC6E /* QuartzCore.framework in Frameworks */,
-				671701672B59185400AEEC6E /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +114,7 @@
 				6717013E2B59148500AEEC6E /* LaunchScreen.storyboard */,
 				671701412B59148500AEEC6E /* Info.plist */,
 				671701632B59152500AEEC6E /* AnimationView.swift */,
+				6717016C2B59A09A00AEEC6E /* AnimationCompletionAdapter.swift */,
 			);
 			path = "test circle animation";
 			sourceTree = "<group>";
@@ -277,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6717016D2B59A09A00AEEC6E /* AnimationCompletionAdapter.swift in Sources */,
 				671701382B59148300AEEC6E /* ViewController.swift in Sources */,
 				671701642B59152500AEEC6E /* AnimationView.swift in Sources */,
 				671701342B59148300AEEC6E /* AppDelegate.swift in Sources */,
@@ -462,6 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PG96594A9T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "test circle animation/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -489,6 +490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PG96594A9T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "test circle animation/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
