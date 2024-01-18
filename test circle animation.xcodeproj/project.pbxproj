@@ -18,6 +18,7 @@
 		671701572B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701562B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift */; };
 		671701642B59152500AEEC6E /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701632B59152500AEEC6E /* AnimationView.swift */; };
 		671701672B59185400AEEC6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671701662B59185400AEEC6E /* CoreGraphics.framework */; };
+		6717016B2B59195400AEEC6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6717016A2B59195400AEEC6E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		671701562B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_circle_animationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		671701632B59152500AEEC6E /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		671701662B59185400AEEC6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6717016A2B59195400AEEC6E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6717016B2B59195400AEEC6E /* QuartzCore.framework in Frameworks */,
 				671701672B59185400AEEC6E /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +140,7 @@
 		671701652B59185400AEEC6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6717016A2B59195400AEEC6E /* QuartzCore.framework */,
 				671701662B59185400AEEC6E /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
