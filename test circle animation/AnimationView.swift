@@ -8,7 +8,7 @@
 import UIKit
 import CoreGraphics
 
-class AnimationView: UIView {
+class AnimationView: UIView, CAAnimationDelegate {
 
     var circles = [CAShapeLayer]()
 
@@ -39,9 +39,7 @@ class AnimationView: UIView {
             circles.append(circle)
         }
     }
-    
-   
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -61,16 +59,16 @@ class AnimationView: UIView {
     
     func startAnimation() {
         
-        let circle = circles[0]
-        
-        let transition = CATransition()
-        transition.duration = 10
-        transition.type = .fade
-        
-        circle.add(transition, forKey: "turn blue")
-        circle.fillColor = UIColor.blue.cgColor
-        
+        circles[0].animateFillColorChange(to: UIColor.blue.cgColor, delegate: self)
     }
+    
+    @objc func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if flag {
+            circles[0].animateFillColorChange(to: UIColor.green.cgColor)
+            circles[1].animateFillColorChange(to: UIColor.blue.cgColor)
+        }
+    }
+    
     
     private func layoutLeftSide(_ verticalPadding: CGFloat, _ horizontalPadding: CGFloat, _ circleSize: CGFloat, _ distance: CGFloat) {
         var bottomY = bounds.height - verticalPadding
@@ -143,6 +141,18 @@ extension CALayer {
         layer.fillColor = UIColor.animationBackground.cgColor
 
         return layer
+    }
+}
+
+extension CAShapeLayer {
+    func animateFillColorChange(to color: CGColor, delegate: CAAnimationDelegate? = nil) {
+        let transition = CATransition()
+        transition.type = .fade
+        transition.duration = 5
+        transition.delegate = delegate
+        
+        self.add(transition, forKey: "com.testcircleanimation.fade")
+        self.fillColor = color
     }
 }
 
