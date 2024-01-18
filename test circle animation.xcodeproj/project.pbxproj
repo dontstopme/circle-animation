@@ -16,6 +16,7 @@
 		6717014B2B59148500AEEC6E /* test_circle_animationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6717014A2B59148500AEEC6E /* test_circle_animationTests.swift */; };
 		671701552B59148500AEEC6E /* test_circle_animationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701542B59148500AEEC6E /* test_circle_animationUITests.swift */; };
 		671701572B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701562B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift */; };
+		671701642B59152500AEEC6E /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701632B59152500AEEC6E /* AnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		671701502B59148500AEEC6E /* test circle animationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test circle animationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		671701542B59148500AEEC6E /* test_circle_animationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_circle_animationUITests.swift; sourceTree = "<group>"; };
 		671701562B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_circle_animationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		671701632B59152500AEEC6E /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				6717013C2B59148500AEEC6E /* Assets.xcassets */,
 				6717013E2B59148500AEEC6E /* LaunchScreen.storyboard */,
 				671701412B59148500AEEC6E /* Info.plist */,
+				671701632B59152500AEEC6E /* AnimationView.swift */,
 			);
 			path = "test circle animation";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				671701382B59148300AEEC6E /* ViewController.swift in Sources */,
+				671701642B59152500AEEC6E /* AnimationView.swift in Sources */,
 				671701342B59148300AEEC6E /* AppDelegate.swift in Sources */,
 				671701362B59148300AEEC6E /* SceneDelegate.swift in Sources */,
 			);
