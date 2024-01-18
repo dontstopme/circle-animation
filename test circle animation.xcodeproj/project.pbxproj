@@ -17,6 +17,7 @@
 		671701552B59148500AEEC6E /* test_circle_animationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701542B59148500AEEC6E /* test_circle_animationUITests.swift */; };
 		671701572B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701562B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift */; };
 		671701642B59152500AEEC6E /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671701632B59152500AEEC6E /* AnimationView.swift */; };
+		671701672B59185400AEEC6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671701662B59185400AEEC6E /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		671701542B59148500AEEC6E /* test_circle_animationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_circle_animationUITests.swift; sourceTree = "<group>"; };
 		671701562B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_circle_animationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		671701632B59152500AEEC6E /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		671701662B59185400AEEC6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				671701672B59185400AEEC6E /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				671701492B59148500AEEC6E /* test circle animationTests */,
 				671701532B59148500AEEC6E /* test circle animationUITests */,
 				671701312B59148300AEEC6E /* Products */,
+				671701652B59185400AEEC6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +132,14 @@
 				671701562B59148500AEEC6E /* test_circle_animationUITestsLaunchTests.swift */,
 			);
 			path = "test circle animationUITests";
+			sourceTree = "<group>";
+		};
+		671701652B59185400AEEC6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				671701662B59185400AEEC6E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
