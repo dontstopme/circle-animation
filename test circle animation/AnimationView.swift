@@ -8,28 +8,31 @@
 import UIKit
 import CoreGraphics
 
-class AnimationView: UIView, CAAnimationDelegate {
+class AnimationView: UIView {
+    static var TimeBetweenSteps = 0.2
+    static var ColorChangeDuration = 0.001
 
     var circles = [CAShapeLayer]()
+    var animationStep = Int(26)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         configure()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         configure()
     }
-      
+
     override var bounds: CGRect {
         didSet {
             self.setNeedsLayout()
         }
     }
-    
+
     func configure() {
         self.layer.backgroundColor = UIColor.animationBackground.cgColor
 
@@ -57,19 +60,31 @@ class AnimationView: UIView, CAAnimationDelegate {
         layoutRightSide(verticalPadding, horizontalPadding, circleSize, distance)
     }
     
-    func startAnimation() {
+    func progressAnimation() {
+        self.animationStep = self.animationStep >= self.circles.count - 1 ? 0 : self.animationStep + 1
         
-        circles[0].animateFillColorChange(to: UIColor.blue.cgColor, delegate: self)
+        let adapter = AnimationCompletionAdapter(completion: { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + Self.TimeBetweenSteps ) {
+                self?.progressAnimation()
+            }
+        })
+
+        self.circles[animationStep].animateFillColorChange(to: UIColor.blue.cgColor, delegate: adapter)
+        
+        let greenIndex = animationStep - 1 >= 0 ? animationStep - 1 : self.circles.count - 1
+        self.circles[greenIndex].animateFillColorChange(to: UIColor.green.cgColor)
+        
+        let redIndex = greenIndex - 1 >= 0 ? greenIndex - 1 : self.circles.count - 1 - greenIndex
+        self.circles[redIndex].animateFillColorChange(to: UIColor.red.cgColor)
+        
+        let offIndex = redIndex - 1 >= 0 ? redIndex - 1 : self.circles.count - 1 - redIndex
+        self.circles[offIndex].animateFillColorChange(to: UIColor.animationBackground.cgColor)
     }
-    
-    @objc func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            circles[0].animateFillColorChange(to: UIColor.green.cgColor)
-            circles[1].animateFillColorChange(to: UIColor.blue.cgColor)
-        }
+
+    func startAnimation() {
+        self.progressAnimation()
     }
-    
-    
+
     private func layoutLeftSide(_ verticalPadding: CGFloat, _ horizontalPadding: CGFloat, _ circleSize: CGFloat, _ distance: CGFloat) {
         var bottomY = bounds.height - verticalPadding
         
@@ -146,7 +161,7 @@ extension CAShapeLayer {
     func animateFillColorChange(to color: CGColor, delegate: CAAnimationDelegate? = nil) {
         let transition = CATransition()
         transition.type = .fade
-        transition.duration = 5
+        transition.duration = AnimationView.ColorChangeDuration
         transition.delegate = delegate
         
         self.add(transition, forKey: "com.testcircleanimation.fade")
