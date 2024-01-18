@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CoreGraphics
 
 class AnimationView: UIView {
 
-    var shapes = [CAShapeLayer]()
+    var circles = [CAShapeLayer]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +36,7 @@ class AnimationView: UIView {
         for _ in 0 ..< 29 {
             let circle = CALayer.circleLayer
             self.layer.addSublayer(circle)
-            shapes.append(circle)
+            circles.append(circle)
         }
     }
     
@@ -58,11 +59,24 @@ class AnimationView: UIView {
         layoutRightSide(verticalPadding, horizontalPadding, circleSize, distance)
     }
     
+    func startAnimation() {
+        
+        let circle = circles[0]
+        
+        let transition = CATransition()
+        transition.duration = 10
+        transition.type = .fade
+        
+        circle.add(transition, forKey: "turn blue")
+        circle.fillColor = UIColor.blue.cgColor
+        
+    }
+    
     private func layoutLeftSide(_ verticalPadding: CGFloat, _ horizontalPadding: CGFloat, _ circleSize: CGFloat, _ distance: CGFloat) {
         var bottomY = bounds.height - verticalPadding
         
         for i in 0 ..< 11 {
-            let circle = shapes[i]
+            let circle = circles[i]
             
             circle.path = CGPath(
                 ellipseIn: CGRectMake(horizontalPadding, bottomY - circleSize, circleSize, circleSize),
@@ -80,19 +94,19 @@ class AnimationView: UIView {
         let topY = bounds.height - verticalPadding - 12 * circleSize - 10 * distance
         var horizontalX = horizontalPadding + circleSize + distance
 
-        let leftCornerCircle = shapes[11]
+        let leftCornerCircle = circles[11]
         leftCornerCircle.path = CGPath(
             ellipseIn: CGRectMake(horizontalX, topY, circleSize, circleSize),
             transform: nil)
 
-        let rightCornerCircle = shapes [17]
+        let rightCornerCircle = circles [17]
         rightCornerCircle.path = CGPath(
             ellipseIn: CGRectMake(bounds.width - horizontalPadding - circleSize, topY, circleSize, circleSize),
             transform: nil)
         
         horizontalX += circleSize + distance
         for i in 12 ..< 17 {
-            let circle = shapes[i]
+            let circle = circles[i]
             
             circle.path = CGMutablePath(
                 ellipseIn: CGRectMake(horizontalX, topY - circleSize, circleSize, circleSize),
@@ -108,7 +122,7 @@ class AnimationView: UIView {
         var rightX = bounds.width - horizontalPadding
         
         for i in 18 ..< 29 {
-            let circle = shapes[i]
+            let circle = circles[i]
             
             circle.path = CGMutablePath(
                 ellipseIn: CGRectMake(rightX, bottomY - circleSize, circleSize, circleSize),
