@@ -83,8 +83,6 @@ class AnimationView: UIView, CAAnimationDelegate {
             bottomY -= distance
             bottomY -= circleSize
         }
-        
-        let x = bottomY
     }
     
     private func layoutTop(_ verticalPadding: CGFloat, _ horizontalPadding: CGFloat, _ circleSize: CGFloat, _ distance: CGFloat) {
@@ -117,9 +115,9 @@ class AnimationView: UIView, CAAnimationDelegate {
     
     private func layoutRightSide(_ verticalPadding: CGFloat, _ horizontalPadding: CGFloat, _ circleSize: CGFloat, _ distance: CGFloat) {
         var bottomY = bounds.height - verticalPadding
-        var rightX = bounds.width - horizontalPadding
+        let rightX = bounds.width - horizontalPadding
         
-        for i in 18 ..< 29 {
+        for i in (18 ..< 29).reversed() {
             let circle = circles[i]
             
             circle.path = CGMutablePath(
