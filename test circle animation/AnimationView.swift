@@ -13,7 +13,7 @@ class AnimationView: UIView {
     static var ColorChangeDuration = 0.001
 
     var circles = [CAShapeLayer]()
-    var animationStep = Int(26)
+    var animationStep = Int(3)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,21 +43,23 @@ class AnimationView: UIView {
         }
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
         
-        let circleSize = CGFloat(25)
-        let distance = CGFloat(10)
-        
-        let formationHeight = CGFloat(circleSize * 13 + distance * 12)
-        let verticalPadding = CGFloat((bounds.height - formationHeight) * 0.5)
-        
-        let formationWidth = CGFloat(circleSize * 8 + distance * 7)
-        let horizontalPadding = CGFloat((bounds.width - formationWidth) * 0.5)
+        if layer == self.layer {
+            let circleSize = CGFloat(25)
+            let distance = CGFloat(10)
+            
+            let formationHeight = CGFloat(circleSize * 13 + distance * 12)
+            let verticalPadding = CGFloat((bounds.height - formationHeight) * 0.5)
+            
+            let formationWidth = CGFloat(circleSize * 8 + distance * 7)
+            let horizontalPadding = CGFloat((bounds.width - formationWidth) * 0.5)
 
-        layoutLeftSide(verticalPadding, horizontalPadding, circleSize, distance)
-        layoutTop(verticalPadding, horizontalPadding, circleSize, distance)
-        layoutRightSide(verticalPadding, horizontalPadding, circleSize, distance)
+            layoutLeftSide(verticalPadding, horizontalPadding, circleSize, distance)
+            layoutTop(verticalPadding, horizontalPadding, circleSize, distance)
+            layoutRightSide(verticalPadding, horizontalPadding, circleSize, distance)
+        }
     }
     
     func progressAnimation() {
@@ -119,7 +121,7 @@ class AnimationView: UIView {
         for i in 12 ..< 17 {
             let circle = circles[i]
             
-            circle.path = CGMutablePath(
+            circle.path = CGPath(
                 ellipseIn: CGRectMake(horizontalX, topY - circleSize, circleSize, circleSize),
                 transform: nil)
             
